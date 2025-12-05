@@ -9,10 +9,9 @@ Title: macbook pro M3 16 inch 2024
 */
 
 import { useGLTF, useTexture } from "@react-three/drei";
-import { MeshBasicMaterial } from "three";
-const texture = useTexture("/screen.png");
 
 export default function MacbookModel16(props) {
+  const texture = useTexture("/screen.png");
   const { nodes, materials } = useGLTF("/models/macbook-16-transformed.glb");
   return (
     <group {...props} dispose={null}>
@@ -106,7 +105,7 @@ export default function MacbookModel16(props) {
         material={materials.sfCQkHOWyrsLmor}
         rotation={[Math.PI / 2, 0, 0]}
       >
-        <MeshBasicMaterial map={texture} />
+        <meshBasicMaterial map={texture} />
       </mesh>
       <mesh
         geometry={nodes.Object_127.geometry}
